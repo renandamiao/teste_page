@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia do RD - Agendamentos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <h2>Barbearia do RD - Agendamento</h2>
+        <div class="info">
+            <p><strong>Duração do corte:</strong> 30 minutos</p>
+            <p><strong>Valor:</strong> 35 Reais</p>
+            <p><strong>Pagamento:</strong> No local</p>
+            <p><strong>Horários de Trabalho:</strong> Segunda a Sexta, das 08:00 às 11:00 e das 14:00 às 19:00</p>
+            <p><strong>Para mais informações entre em contato:</strong> Fone (xx) xxxxxxxxx</p>
+        </div>
+
+        <!-- Agendar Serviço -->
+        <h3>Agendar Serviço</h3>
+        <form id="agendarForm" onsubmit="agendar(); return false;">
+            <input type="text" id="nome" placeholder="Digite seu nome" required>
+            <input type="date" id="data" required>
+            <select id="horario" required>
+                <option value="" disabled selected>Escolha o horário</option>
+            </select>
+            <input type="text" id="telefone" placeholder="Digite seu número de telefone" required>
+            <button type="submit">Agendar</button>
+        </form>
+
+        <!-- Cancelar Agendamento -->
+        <h3>Cancelar Agendamento</h3>
+        <form id="cancelarForm" onsubmit="cancelarAgendamento(); return false;">
+            <input type="text" id="telefoneCancel" placeholder="Digite seu número de telefone para cancelar" required>
+            <button type="submit">Cancelar Agendamento</button>
+        </form>
+
+        <!-- Verificar Agendamentos -->
+        <h3>Verificar Agendamentos</h3>
+        <form id="verificarForm" onsubmit="verificarAgendamentos(); return false;">
+            <input type="text" id="telefoneVerificar" placeholder="Digite seu número de telefone para verificar" required>
+            <button type="submit">Verificar Agendamentos</button>
+        </form>
+
+        <div id="resultado"></div>
+
+        <!-- Histórico de Agendamentos -->
+        <h3>Histórico de Agendamentos</h3>
+        <form id="historicoForm" onsubmit="historicoAgendamentos(); return false;">
+            <input type="text" id="telefoneHistorico" placeholder="Digite seu número de telefone para ver o histórico" required>
+            <button type="submit">Ver Histórico</button>
+        </form>
+
+        <div id="resultadoHistorico"></div>
+    </div>
+
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>
